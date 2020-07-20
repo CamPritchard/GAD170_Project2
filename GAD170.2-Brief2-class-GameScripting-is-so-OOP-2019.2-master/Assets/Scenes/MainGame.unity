@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -197,6 +198,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -277,6 +279,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -789,10 +792,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2bf1e1175c6654b8cb87b0dcda8fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroLibrary: []
-  monsterLibrary: []
-  heroSpawnPoints: []
-  monsterSpawnPoints: []
+  heroLibrary:
+  - {fileID: 3214406832767278706, guid: 60d99d227c8ea654f9d957d31229db93, type: 3}
+  - {fileID: 3112724444100952842, guid: 1e0566f8cdb9f7848a35a3eeb5138595, type: 3}
+  - {fileID: 7255721730336779698, guid: 2f1dc76a02ad3e043901ea0388f75c90, type: 3}
+  monsterLibrary:
+  - {fileID: 6004339312666658779, guid: f919f445d0b02ff4b9e1b341b14aeae2, type: 3}
+  - {fileID: 4027312076775606437, guid: 6b9f56a7eecce864f8b31e9b17604f2f, type: 3}
+  - {fileID: 4009492827521068483, guid: 324320535b4f8f34592b92b3f33c88e4, type: 3}
+  heroSpawnPoints:
+  - {fileID: 1036653964}
+  - {fileID: 1406130232}
+  - {fileID: 1164783858}
+  monsterSpawnPoints:
+  - {fileID: 2014948470}
+  - {fileID: 1842186815}
+  - {fileID: 385042840}
   ouputLog: {fileID: 660778974}
 --- !u!4 &1592561281
 Transform:
@@ -873,6 +888,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -976,6 +992,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
