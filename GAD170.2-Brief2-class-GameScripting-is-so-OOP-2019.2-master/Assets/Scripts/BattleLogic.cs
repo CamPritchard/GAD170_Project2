@@ -66,7 +66,7 @@ public class BattleLogic : MonoBehaviour
 
             // Instantiate a random character from the characterLibrary (*See 'Instantiate' and 'Random.Range' in the Unity Scripting Reference for more)
             // HINT: GameObject newCharacter = ...
-            GameObject newCharacter = Instantiate(characterLibrary[Random.Range(0, (characterLibrary.Length))]);
+            CharacterStats newCharacter = Instantiate(characterLibrary[Random.Range(0, (characterLibrary.Length))]);
             // Fix the new character GameObject name (eg remove the "(Clone)" Unity puts at the end)  Uncomment the next line...
             newCharacter.name = newCharacter.name.Replace( "(Clone)", "" );
 
