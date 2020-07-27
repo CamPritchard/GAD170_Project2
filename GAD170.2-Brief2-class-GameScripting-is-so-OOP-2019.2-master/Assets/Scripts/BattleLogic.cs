@@ -147,7 +147,7 @@ public class BattleLogic : MonoBehaviour
         {
             monster.TakeDamage(hero.damage);
             log = hero.name + " hit " + monster.name + " for " + hero.damage + " points of damage.";
-            if( monster.health <= 0 )   
+            if( monster.health <= 0f )   
             {
                 Destroy(monster);
                 log = hero.name + " defeated " + monster.name + ".";
@@ -157,7 +157,7 @@ public class BattleLogic : MonoBehaviour
         {
             hero.TakeDamage(monster.damage);
             log = monster.name + " hit " + hero.name + " for " + monster.damage + " points of damage.";
-            if( hero.health <= 0 )   
+            if( hero.health <= 0f )   
             {
                 Destroy(hero);
                 log = monster.name + " defeated " + hero.name + ".";
