@@ -143,7 +143,7 @@ public class BattleLogic : MonoBehaviour
                         OR characterTakingDamage.name + " was defeated by " + characterDoingDamage.name
         */
 
-        if( Random.value > 0.5f )
+        if( hero.speed > monster.speed )
         {
             monster.TakeDamage(hero.damage);
             log = hero.name + " hit " + monster.name + " for " + hero.damage + " points of damage.";

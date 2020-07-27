@@ -95,8 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611e39e357a9ad54b8443b36dd90f009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 7
+  health: 6
   damage: 2
+  speed: 8
 --- !u!82 &2233664488166498932
 AudioSource:
   m_ObjectHideFlags: 0

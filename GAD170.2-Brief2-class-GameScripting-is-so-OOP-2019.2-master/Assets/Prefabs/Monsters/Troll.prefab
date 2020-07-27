@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 8
   damage: 4
+  speed: 5
 --- !u!82 &293483389748010822
 AudioSource:
   m_ObjectHideFlags: 0
