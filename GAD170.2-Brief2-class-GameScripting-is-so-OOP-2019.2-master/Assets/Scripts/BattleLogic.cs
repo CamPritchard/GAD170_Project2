@@ -114,13 +114,14 @@ public class BattleLogic : MonoBehaviour
         // TODO: Randomly select a hero and monster from the active heroes ( eg choosing one hero and one monster per round )
         CharacterStats hero = this.activeHeroes[ Random.Range( 0, this.activeHeroes.Count ) ];
         // HINT: CharacterStats monster = ...
+        CharacterStats monster = this.activeMonsters[ Random.Range( 0, this.activeMonsters.Count ) ];
 
         // Dull the color of all active characters.
         this.SetAllActiveCharacterColors( Color.gray );
 
         // Set the randomly selected, fighting hero and monster characters back to white ( eg Makes it easier to see which characters are fighting )
         hero.GetComponent<SpriteRenderer>().color = Color.white;
-        //monster.GetComponent<SpriteRenderer>().color = Color.white;
+        monster.GetComponent<SpriteRenderer>().color = Color.white;
 
         // Some text that will be
         string log = "";
@@ -142,7 +143,29 @@ public class BattleLogic : MonoBehaviour
                         OR characterTakingDamage.name + " was defeated by " + characterDoingDamage.name
         */
 
+        if( Random.value > 0.5f )
+        {
+            monster.TakeDamage(hero.damage);
+            log = hero.name + " hit " + monster.name + " for " + hero.damage + " points of damage.";
+            if( monster.health <= 0 )   
+            {
+                Destroy(monster);
+                log = hero.name + " defeated " + monster.name + ".";
+            }
+        }
+        else
+        {
+            hero.TakeDamage(monster.damage);
+            log = monster.name + " hit " + hero.name + " for " + monster.damage + " points of damage.";
+            if( hero.health <= 0 )   
+            {
+                Destroy(hero);
+                log = monster.name + " defeated " + hero.name + ".";
+            }
+        }
 
+
+    /*
         // EXAMPLE: Randomly choose either the the hero or the monster to hit the other.
         if( Random.value > 0.5f )
         {
@@ -170,8 +193,7 @@ public class BattleLogic : MonoBehaviour
                 // Else, output '{hero name} hit {monster name} for {hero damage} points of damage.'
             
         }
-
-
+    */
 
         //Writes the outcome of the fight to the screen.
         ouputLog.OutputText( log );
